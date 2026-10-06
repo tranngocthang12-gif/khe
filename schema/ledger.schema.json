@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Khế ledger v0.1 — một dòng JSON mỗi PR đã merge",
+  "type": "object",
+  "required": ["pr", "arm"],
+  "properties": {
+    "pr":  {"type": ["integer", "string"]},
+    "arm": {"enum": ["A", "T", "B", "C"], "description": "A CI hiện tại · T mẫu ô trống · B tiêu chí+bộ kiểm độc lập · C B+Khế"},
+    "claims": {"type": "array", "items": {"type": "object", "required": ["id", "status"],
+      "properties": {"id": {"type": "string"}, "status": {"enum": ["pass", "fail", "inconclusive", "not_run", "stale", "mismatch", "judgment"]}}}},
+    "open": {"type": "array", "items": {"type": "object", "required": ["id"],
+      "properties": {"id": {"type": "string"}, "source": {"enum": ["computed", "declared"]}}}},
+    "human_assumptions": {"type": "array", "items": {"type": "object", "required": ["id"],
+      "properties": {"id": {"type": "string"}, "approve_seconds": {"type": ["number", "null"]}, "later_wrong": {"type": "boolean"}}}},
+    "bugs": {"type": "array", "items": {"type": "object", "required": ["id", "severity"],
+      "properties": {"id": {"type": "string"}, "severity": {"enum": ["low", "med", "high", "critical"]},
+        "linked_open": {"type": ["string", "null"], "description": "id mục CHƯA KIỂM đã báo trước lỗi này"},
+        "linked_claim": {"type": ["string", "null"], "description": "id cam kết đã pass mà lỗi vẫn rơi vào"}}}},
+    "blocked": {"type": "boolean"},
+    "false_block": {"type": "boolean"},
+    "cycle_hours": {"type": "number"}
+  }
+}
