@@ -11,7 +11,7 @@ khe/            bộ kiểm hợp lệ (parser, evidence, provenance, validator,
 SPEC.md         đặc tả v0.1
 schema/         JSON Schema của attestation, acceptance, ledger
 templates/      mẫu PR có khối Khế
-.github/        bước CI
+.github/        bước CI (chưa đưa lên repo này)
 examples/       khối mẫu + demo.sh dựng repo thật và chạy đầu-cuối
 tests/          20 kiểm thử (dựng repo git thật để kiểm provenance)
 ```
