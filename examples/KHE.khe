@@ -1,0 +1,14 @@
+# Khối Khế mẫu — mã chuẩn là tiếng Anh, bí danh tiếng Việt dùng được.
+MỤC ĐÍCH: Thêm nút xuất Excel cho báo cáo tháng.
+
+GIẢ ĐỊNH A1 [guard]:  Báo cáo không quá 50.000 dòng.            THAM CHIẾU: src/export.py::check_rows
+GIẢ ĐỊNH A2 [policy]: Mã hóa UTF-8 với BOM.                     CHÍNH SÁCH: POL-ENC-01
+GIẢ ĐỊNH A3 [human]:  Khách dùng Excel, không dùng LibreOffice. DUYỆT: lan@x.vn 2026-10-06
+
+PHẢI M1: Mở được trên Excel 2016+            KIỂM: property tests/test_export_open.py
+PHẢI M2: Tổng cột Doanh thu khớp màn hình    KIỂM: diff tests/test_export_sum.py
+CẤM  N1: PII xuất hiện trong log             KIỂM: scan rules/pii.yml
+PHẢI M3: Bố cục dễ đọc với kế toán           KIỂM: judgment
+
+CHƯA KIỂM O1: Ký tự tiếng Việt trên Excel macOS   ĐỔI LẠI: mất dấu ở header, kế toán đọc sai tên cột
+RÀ BỞI: qa@x.vn

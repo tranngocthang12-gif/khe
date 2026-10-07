@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Khế attestation v0.1",
+  "type": "object",
+  "required": ["claim", "type", "ref", "result", "artifact", "runner", "config", "timestamp"],
+  "properties": {
+    "claim":     {"type": "string"},
+    "type":      {"enum": ["property", "diff", "proof", "scan", "source", "human"]},
+    "ref":       {"type": "string"},
+    "result":    {"enum": ["pass", "fail", "inconclusive"]},
+    "artifact":  {"type": "string", "description": "git HEAD lúc chạy"},
+    "runner":    {"type": "string", "description": "danh tính bộ chạy"},
+    "config":    {"type": "string", "description": "sha256(type·ref·command) rút gọn"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "command":   {"type": "array", "items": {"type": "string"}},
+    "returncode": {"type": ["integer", "null"]},
+    "log_tail":  {"type": "string"}
+  }
+}

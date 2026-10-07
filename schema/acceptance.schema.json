@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Khế acceptance v0.1 — do bên nhận commit",
+  "type": "object",
+  "required": ["receiver", "decision", "artifact"],
+  "properties": {
+    "receiver": {"type": "string", "description": "email bên nhận, phải khác producer và là tác giả commit file này"},
+    "decision": {"enum": ["accepted", "rejected"]},
+    "artifact": {"type": "string", "description": "git HEAD được nghiệm thu"},
+    "reason":   {"type": "string"}
+  }
+}
