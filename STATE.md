@@ -2,16 +2,16 @@
 
 Chỉ để định hướng, không có thẩm quyền. Nếu điều gì ở đây trái `main` hoặc Hiến pháp, `STATE.md` sai và phải sửa. Trạng thái của từng văn bản do bản ghi quyết định mới nhất về nó quyết; bảng dưới chỉ liệt kê lại.
 
-**Commit tham chiếu:** `b242a06` (merge PR #1 vào `main`; ruleset đã bật sau commit này). **Cập nhật:** 2026-10-08.
+**Commit tham chiếu:** `3384ad8` (merge PR #2 vào `main`). **Cập nhật:** 2026-10-08.
 
 ## Văn bản có thẩm quyền
 | Văn bản | Tầng | Trạng thái |
 |---|---|---|
-| `HIEN_PHAP.md` v0.4 | T0 | NHÁP; sẽ ÁP DỤNG TẠM khi Owner merge PR #2 (QĐ-0004); HIỆU LỰC cần Điều 1.0, bài kiểm phục hồi, xác nhận của Critic trên văn bản cuối |
+| `HIEN_PHAP.md` v0.4 | T0 | ÁP DỤNG TẠM từ commit `3384ad8` (QĐ-0004); HIỆU LỰC cần Điều 1.0, bài kiểm phục hồi, xác nhận của Critic trên văn bản cuối |
 | Phụ lục A (trong `HIEN_PHAP.md`) | T1 tạm | như trên |
 | `KIEN_TRUC.md` | T1 | chưa có |
 | `LUAT_TO_CHUC.md` | T1 | chưa có |
-| `decisions/0001`–`0004` | T1 | bản ghi quyết định: có hiệu lực từ commit merge PR #2 (Điều 4) |
+| `decisions/0001`–`0004` | T1 | bản ghi quyết định: có hiệu lực từ commit `3384ad8` (Điều 4) |
 | `SPEC.md` | T2 | v0.1 trên `main`, chưa có bản ghi nào, nên là NHÁP |
 
 ## Vai hiện tại
@@ -33,12 +33,10 @@ Chỉ để định hướng, không có thẩm quyền. Nếu điều gì ở �
 - `.github/` workflow và `evidence/` chưa có; kiểm độc lập mã v0.1 chưa làm.
 
 ## Việc kế tiếp
-1. PR #2: Hiến pháp, Phụ lục A, `STATE.md`, bản ghi 0001–0004, `phuc_hoi/CAU_HOI.md`. Owner merge; từ commit merge, Hiến pháp ÁP DỤNG TẠM.
-2. PR nhỏ chỉ sửa `STATE.md`: commit tham chiếu = commit merge của PR #2.
-3. Owner viết `DAP_AN.md`; chạy bài kiểm phục hồi hai lượt (PL-A.5). Nếu phải sửa tài liệu, sửa rồi kiểm lại bằng phiên mới.
-4. Văn bản cuối: một Critic xác nhận, nêu băm (Điều 6, mục 2).
-5. Owner quyết Điều 1.0; phê chuẩn HIỆU LỰC bằng bản ghi riêng, nêu commit và băm.
-6. `KIEN_TRUC.md` → `SPEC.md` rà lại → `LUAT_TO_CHUC.md` → mới giao gói.
+1. Owner viết `DAP_AN.md`; chạy bài kiểm phục hồi hai lượt (PL-A.5). Nếu phải sửa tài liệu, sửa rồi kiểm lại bằng phiên mới.
+2. Văn bản cuối: một Critic xác nhận, nêu băm (Điều 6, mục 2).
+3. Owner quyết Điều 1.0; phê chuẩn HIỆU LỰC bằng bản ghi riêng, nêu commit và băm.
+4. `KIEN_TRUC.md` → `SPEC.md` rà lại → `LUAT_TO_CHUC.md` → mới giao gói.
 
 ## Cách phục hồi
 Đầu vào cho bài kiểm phục hồi (PL-A.5.2): `STATE.md`, `HIEN_PHAP.md`, `decisions/*.md`. Không gồm `phuc_hoi/DAP_AN.md`.
